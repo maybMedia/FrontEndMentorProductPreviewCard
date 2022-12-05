@@ -34,71 +34,101 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub - FrontEndMentorProductPreviewCard](https://github.com/maybMedia/FrontEndMentorProductPreviewCard)
+- Live Site URL: [GitHub Pages - Note: This site isn't correctly detecting page width for some odd reason causing it to always be in 'mobile' mode.](https://maybmedia.github.io/FrontEndMentorProductPreviewCard/)
 
 ## My process
 
+I began by placing all the given information into respective elements with classes. I added the desktop product image and proceeded to style the page. I manually input the colours(looking back however, using custom variables was a better idea) and used flexbox to display the image to the left of the div and the text and button on the right. I then implemented a media query in order to implement the mobile version of the component.
+
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- HTML
+- CSS
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+My biggest learning point from this challenge would have to be my understanding of the 'object-fit' style. I used this in order to ensure the image never stretched or had white bars either side. I also strengthened my understanding of media queries though I am certain that there are improvements to my usage of them due to some quirks I have discovered in my implementation.
 
-To see how you can add code snippets, see below:
+My media query implementation:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@media screen and (max-width: 680px){
+    .description {
+        font-size: 10px;
+    }
+
+    .sale{
+        font-size: 28px;
+    }
+    .rrp{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 880px){
+    .label{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 2028px) {
+    .img img{
+        content: url('images/image-product-mobile.jpg');
+    }
+
+    .img{
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    .product-preview{
+        flex-direction: column;
+        height: 650px;
+        width: 40%;
+        max-width: 440px;
+        inline-size: 38%;
+    }
+
+    .data{
+        width: 100%;
+        max-height: 50%;
+    }
+
+    .label{
+        padding-top: 10px;
+        padding-bottom: 14px;
+        max-width: 85%;
+    }
+
+    .description{
+        /* font-size: 15px; */
+        max-width: 85%;
+    }
+
+    .prices{
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+    .add-to-cart-btn{
+        max-width: 85%;
+    }
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+In future projects I want to learn to implement media queries at highest optimisation as well as the use of flexbox. I also want to be able to scale entire divs more effectively, possibly outside of a media query.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Filling, not stretching, images in CSS](https://stackoverflow.com/questions/11757537/css-image-size-how-to-fill-but-not-stretch) - This stackoverflow post answered my question perfectly in order for me to scale my image smoothly in this challenge.
+- [Wrapping and Breaking Text](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text) - This article helped me though did not provide me with any new ideas, just reaffirmed my prior theories.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@TigerPC](https://www.frontendmentor.io/profile/TigerPC)
+- GitHub - [@maybMedia](https://github.com/maybMedia)
