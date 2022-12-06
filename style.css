@@ -115,6 +115,11 @@ body{
     justify-content: center;
 }
 
+.sr-only{
+    position: absolute;
+    text-indent: -5000px;
+}
+
 @media screen and (max-width: 680px){
     .description {
         font-size: 10px;
@@ -177,4 +182,5 @@ body{
     .add-to-cart-btn{
         max-width: 85%;
     }
+
 }
